@@ -7,7 +7,7 @@
 //   It also overwites the input buffer (inBuf) with NULL characters so that if the next input 
 //   is shorter than the previous one, any left over characters will not be included in new string.
 //   The new string is copied to the hold buffer for processing. 
-//   Hold can be used as a string (Serial.println(hold);)
+//   Hold can be used as a string ie:  Serial.println(hold);
 //   or it can be processed one character at a time until a null is reached.
 //                      ie:   int i=0;
 //                            char s=hold[i];
