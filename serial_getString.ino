@@ -1,4 +1,25 @@
-//#include<string.h>
+//*************************************************
+//
+//   when characters are received through serial connection
+//   they usually include a Carriage Return (CR) and a Line Feed (LF) character.
+//   These could cause problems when printing the string or trying to process the data.
+//   This code removes the CR & LF and terminates the string with a NULL character (\0).
+//   It also overwites the input buffer (inBuf) with NULL characters so that if the next input 
+//   is shorter than the previous one, any left over characters will not be included in new string.
+//   The new string is copied to the hold buffer for processing. 
+//   Hold can be used as a string (Serial.println(hold);)
+//   or it can be processed one character at a time until a null is reached.
+//                      ie:   int i=0;
+//                            char s=hold[i];
+//                            while( s != '\0'){
+//
+//                                process code here
+//
+//                                i++;
+//                                s=hold[i];
+//                            }
+//                                 
+//
 int n = 0;
 char c;
 char discard;         // to handle \cr & \lf
@@ -30,4 +51,7 @@ void loop() {
       Serial.println(hold);
     n=0;                                // reset character count for next read
    }
+  
+  // process code goes here
+ 
 }
